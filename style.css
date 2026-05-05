@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DE+SAS:wght@100..400&display=swap');
+
+body {
+    font-family: "Playwrite DE SAS", cursive;
+    margin: 0;
+    background: #ffb4d4;
+    color: #f1f5f9;
+}
+
+/* HEADER */
+header img {
+    width: 100%;
+    max-width: 30rem;
+    display: block;
+    margin: 0 auto; /* centraliza corretamente */
+}
+
+h1 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+header p {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+/* NAV */
+nav ul {
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* SEÇÕES PADRÃO */
+#sobre,
+#projetos-front,
+#projetos-node,
+#cursos,
+#contato {
+    width: 90%;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+/* SOBRE */
+#sobre {
+    background-color: #ff6ca7;
+    font-size: 1.5rem;
+}
+
+#sobre h2,
+.projeto h2 {
+    font-family: "Playwrite DE SAS", cursive;
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+#sobre p {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    max-width: 30rem;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    animation: slide 15s infinite;
+}
+
+.slides img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.slider:hover .slides {
+    animation-play-state: paused;
+}
+
+/* SECTION */
+section {
+    padding: 2rem;
+}
+
+/* PROJETOS */
+#projetos-front,
+#projetos-node {
+    background-color: #ff6ca7;
+    font-size: 1.3rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+#projetos-node img {
+    width: 100%;
+    max-width: 30rem;
+}
+
+/* BOTÕES */
+.projeto a {
+    display: inline-block;
+    background: #ffffff;
+    color: #ff6ca7;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.projeto a:hover {
+    background: #ffb4d4;
+    color: white;
+}
+
+/* CURSOS */
+#cursos {
+    background-color: #ff6ca7;
+    font-size: 1.3rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.curso h2 {
+    text-align: center;
+    font-family: "Playwrite DE SAS", cursive;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+.curso h3 {
+    margin-top: 1.2rem;
+    color: #ffffff;
+}
+
+.curso p {
+    background: #ffb4d4;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 8px;
+}
+
+/* CONTATO */
+#contato {
+    background-color: #ff6ca7;
+    font-size: 1.3rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.contato h2 {
+    text-align: center;
+    font-family: "Playwrite DE SAS", cursive;
+    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+}
+
+.contato p {
+    margin: 1rem 0;
+}
+
+.contato a {
+    display: inline-block;
+    background: #ffffff;
+    color: #ff6ca7;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 0.3rem;
+    transition: 0.3s;
+}
+
+.contato a:hover {
+    background: #ffb4d4;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    /* TEXTO */
+    h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    /* MENU */
+    nav ul {
+        flex-direction: column; /* menu em coluna */
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    /* SEÇÕES */
+    section {
+        padding: 1rem;
+    }
+
+    #sobre,
+    #projetos-front,
+    #projetos-node,
+    #cursos,
+    #contato {
+        width: 95%;
+        font-size: 1rem;
+    }
+
+    /* SLIDER */
+    .slider {
+        max-width: 100%;
+    }
+
+    /* PROJETOS IMAGEM */
+    #projetos-node img {
+        max-width: 100%;
+    }
+
+    /* BOTÕES */
+    .projeto a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* CURSOS */
+    .curso h3 {
+        font-size: 1rem;
+    }
+
+    .curso p {
+        font-size: 0.9rem;
+    }
+
+    /* CONTATO */
+    .contato p {
+        font-size: 0.95rem;
+    }
+
+    .contato a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
