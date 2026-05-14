@@ -12,7 +12,8 @@ header img {
     width: 100%;
     max-width: 30rem;
     display: block;
-    margin: 0 auto; /* centraliza corretamente */
+    margin: 0 auto;
+    /* centraliza corretamente */
 }
 
 h1 {
@@ -26,32 +27,42 @@ h1 {
 
 header p {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #ffffff;
     text-align: center;
     text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
 }
 
-/* NAV */
+/* MENU */
 nav ul {
     margin-top: 1rem;
+    /* espaçamento acima*/
     list-style: none;
+    /* remove o estilo padrão da lista */
     display: flex;
     justify-content: center;
+    /* centralizar elementos */
     gap: 4vw;
+    /* espeço entre elementos */
     flex-wrap: wrap;
+    /* um  elemento do lado do outro */
 }
 
 nav a {
     color: white;
+    /* cor do  texto */
     text-decoration: none;
-    font-size: 1.3rem;
+    /* remove osublinhado padrão do link */
+    font-size: 1.5rem;
+    /* tamanho da fonte do link */
     text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    /* sombra */
 }
 
 nav a:hover {
-    text-decoration: underline;
-    font-weight: bold;
+    font-size: 2rem; /* tamanho da fonte */
+    text-decoration: underline; /* texto sublinhado */
+    font-weight: bold; /* texto em negrito */
 }
 
 /* SEÇÕES PADRÃO */
@@ -76,14 +87,19 @@ nav a:hover {
 .projeto h2 {
     font-family: "Playwrite DE SAS", cursive;
     margin-top: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: #ffffff;
     text-align: center;
     text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
 }
 
 #sobre p {
+    font-size: 1.5rem;
     font-family: "Open Sans", sans-serif;
+}
+
+.projeto p {
+    font-size: 1.5rem;
 }
 
 /* SLIDER */
@@ -105,11 +121,25 @@ nav a:hover {
 }
 
 @keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .slider:hover .slides {
@@ -151,6 +181,67 @@ section {
     color: white;
 }
 
+.modal {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.8);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+
+  border-radius: 10px;
+}
+
+.anterior,
+.proximo,
+.fechar {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fechar {
+    top: 20px;
+    right: 30px;
+}
+
+.anterior {
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.proximo {
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.image {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.03);
+}
+
 /* CURSOS */
 #cursos {
     background-color: #ff6ca7;
@@ -165,12 +256,12 @@ section {
 }
 
 .curso h3 {
-    margin-top: 1.2rem;
+    margin-top: 2rem;
     color: #ffffff;
 }
 
 .curso p {
-    background: #ffb4d4;
+    font-size: 1.5rem;
     color: #fff;
     padding: 0.6rem;
     border-radius: 8px;
@@ -179,7 +270,7 @@ section {
 /* CONTATO */
 #contato {
     background-color: #ff6ca7;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -210,74 +301,33 @@ section {
     color: white;
 }
 
-@media (max-width: 768px) {
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 
-    /* TEXTO */
-    h1 {
-        font-size: 2rem;
-    }
+  z-index: 1000;
+}
 
-    header p {
-        font-size: 1.1rem;
-    }
+.whatsapp img {
+  width: 8rem;
+  transition: 0.3s;
+}
+
+.whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 769px) {
 
     /* MENU */
     nav ul {
-        flex-direction: column; /* menu em coluna */
+        flex-direction: column;
+        /* menu em coluna */
         align-items: center;
-        gap: 0.8rem;
+        /* alinhar itensa ao centro */
     }
 
-    nav a {
-        font-size: 1.1rem;
-    }
+    
 
-    /* SEÇÕES */
-    section {
-        padding: 1rem;
-    }
-
-    #sobre,
-    #projetos-front,
-    #projetos-node,
-    #cursos,
-    #contato {
-        width: 95%;
-        font-size: 1rem;
-    }
-
-    /* SLIDER */
-    .slider {
-        max-width: 100%;
-    }
-
-    /* PROJETOS IMAGEM */
-    #projetos-node img {
-        max-width: 100%;
-    }
-
-    /* BOTÕES */
-    .projeto a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    /* CURSOS */
-    .curso h3 {
-        font-size: 1rem;
-    }
-
-    .curso p {
-        font-size: 0.9rem;
-    }
-
-    /* CONTATO */
-    .contato p {
-        font-size: 0.95rem;
-    }
-
-    .contato a {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
-    }
 }
