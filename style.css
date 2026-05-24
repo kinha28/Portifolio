@@ -1,15 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DE+SAS:wght@100..400&display=swap');
 
+:root {
+    --marrom: #975f52;
+    --laranja: #f9a476;
+    --vermelho: #9e1405;
+    --branco: #ffffff;
+}
+
+
+
+
 body {
     font-family: "Playwrite DE SAS", cursive;
     margin: 0;
-    background: #ffb4d4;
-    color: #f1f5f9;
+    background: var(--marrom);
 }
 
 /* HEADER */
 header img {
-    width: 100%;
     max-width: 30rem;
     display: block;
     margin: 0 auto;
@@ -20,32 +28,28 @@ h1 {
     margin-bottom: 0;
     margin-top: 1rem;
     font-size: 3rem;
-    color: #ffffff;
+    color: white;
     text-align: center;
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    text-shadow: 0 0 5px var(--vermelho);
 }
 
 header p {
+    margin-bottom: 5rem;
     margin-top: 0;
     font-size: 2rem;
     color: #ffffff;
     text-align: center;
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    text-shadow: 0 0 5px var(--vermelho);
 }
 
 /* MENU */
 nav ul {
-    margin-top: 1rem;
+    margin-top: 5rem;
     /* espaçamento acima*/
     list-style: none;
     /* remove o estilo padrão da lista */
     display: flex;
-    justify-content: center;
-    /* centralizar elementos */
-    gap: 4vw;
-    /* espeço entre elementos */
-    flex-wrap: wrap;
-    /* um  elemento do lado do outro */
+    justify-content: space-around;
 }
 
 nav a {
@@ -53,16 +57,17 @@ nav a {
     /* cor do  texto */
     text-decoration: none;
     /* remove osublinhado padrão do link */
-    font-size: 1.5rem;
+    font-size: 2rem;
     /* tamanho da fonte do link */
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    text-shadow: 0 0 5px var(--vermelho);
     /* sombra */
 }
 
 nav a:hover {
-    font-size: 2rem; /* tamanho da fonte */
-    text-decoration: underline; /* texto sublinhado */
-    font-weight: bold; /* texto em negrito */
+    text-decoration: underline;
+    /* texto sublinhado */
+    font-weight: bold;
+    /* texto em negrito */
 }
 
 /* SEÇÕES PADRÃO */
@@ -79,8 +84,19 @@ nav a:hover {
 
 /* SOBRE */
 #sobre {
-    background-color: #ff6ca7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    background-color: var(--laranja);
     font-size: 1.5rem;
+    padding: 4rem 2rem;
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px var(--marrom);
 }
 
 #sobre h2,
@@ -90,12 +106,46 @@ nav a:hover {
     font-size: 2.5rem;
     color: #ffffff;
     text-align: center;
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    text-shadow: 0 0 5px var(--vermelho);
 }
 
 #sobre p {
     font-size: 1.5rem;
     font-family: "Open Sans", sans-serif;
+    color: var(--vermelho);
+}
+
+.btn-voltar {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    background-color: var(--laranja);
+    color: var(--vermelho);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+    background-color: var(--vermelho);
+    color: white;
+}
+
+/* PROJETOS */
+#projetos-front,
+#projetos-node {
+    color: var(--vermelho);
+    background-color: var(--laranja);
+    font-size: 1.3rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+h3 {
+    text-shadow: 0 0 5px var(--marrom);
+    text-decoration: underline;
 }
 
 .projeto p {
@@ -108,6 +158,7 @@ nav a:hover {
     max-width: 30rem;
     overflow: hidden;
     margin: auto;
+    box-shadow: 2px 2px 10px var(--marrom);
 }
 
 .slides {
@@ -151,14 +202,6 @@ section {
     padding: 2rem;
 }
 
-/* PROJETOS */
-#projetos-front,
-#projetos-node {
-    background-color: #ff6ca7;
-    font-size: 1.3rem;
-    font-family: "Open Sans", sans-serif;
-}
-
 #projetos-node img {
     width: 100%;
     max-width: 30rem;
@@ -167,8 +210,8 @@ section {
 /* BOTÕES */
 .projeto a {
     display: inline-block;
-    background: #ffffff;
-    color: #ff6ca7;
+    background: var(--vermelho);
+    color: var(--laranja);
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
@@ -177,33 +220,27 @@ section {
 }
 
 .projeto a:hover {
-    background: #ffb4d4;
+    text-decoration: underline;
     color: white;
 }
 
 .modal {
-  display: none;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0,0,0,0.8);
-
-  justify-content: center;
-  align-items: center;
-
-  z-index: 2000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
 }
 
 .modal img {
-  max-width: 90%;
-  max-height: 90%;
-
-  border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
 }
 
 .anterior,
@@ -234,60 +271,67 @@ section {
 }
 
 .image {
-  cursor: pointer;
-  transition: 0.3s;
+    box-shadow: 2px 2px 10px var(--marrom);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .image:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 /* CURSOS */
 #cursos {
-    background-color: #ff6ca7;
+    background-color: var(--laranja);
     font-size: 1.3rem;
     font-family: "Open Sans", sans-serif;
 }
 
 .curso h2 {
-    text-align: center;
     font-family: "Playwrite DE SAS", cursive;
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 5px var(--vermelho);
 }
 
 .curso h3 {
-    margin-top: 2rem;
-    color: #ffffff;
+    color: var(--vermelho);
+    text-shadow: 0 0 5px var(--marrom);
+    text-decoration: underline;
 }
 
 .curso p {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--vermelho);
     padding: 0.6rem;
-    border-radius: 8px;
 }
 
 /* CONTATO */
 #contato {
-    background-color: #ff6ca7;
+    background-color: var(--laranja);
     font-size: 1.5rem;
     font-family: "Open Sans", sans-serif;
 }
 
 .contato h2 {
-    text-align: center;
     font-family: "Playwrite DE SAS", cursive;
-    text-shadow: 0 0 10px #ff6ca7, 0 0 20px #ff6ca7;
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 5px var(--vermelho);
 }
 
 .contato p {
-    margin: 1rem 0;
+    color: var(--vermelho);
 }
 
 .contato a {
     display: inline-block;
-    background: #ffffff;
-    color: #ff6ca7;
+    background: var(--vermelho);
+    color: var(--laranja);
     padding: 0.3rem 0.8rem;
     border-radius: 6px;
     text-decoration: none;
@@ -297,25 +341,24 @@ section {
 }
 
 .contato a:hover {
-    background: #ffb4d4;
+    text-decoration: underline;
     color: white;
 }
 
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .whatsapp img {
-  width: 8rem;
-  transition: 0.3s;
+    width: 8rem;
+    transition: 0.3s;
 }
 
 .whatsapp img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 @media (max-width: 769px) {
@@ -328,6 +371,8 @@ section {
         /* alinhar itensa ao centro */
     }
 
-    
+    #sobre {
+        flex-direction: column-reverse;
+    }
 
 }
